@@ -15,10 +15,10 @@ SELECT Nom,Prenom,Rue,Numero,Ville
 		ORDER BY Prenom;
 
 /*Obtenir la liste (nom, prénom, code permanent,ville) de où les étudiants habitent ‘Québec’, qui sont agés de 30 et plus et sont à temps partiel*/
-SELECT Nom, Prenom, CodePermanent, Ville
+SELECT Nom, Prenom, CodePermanent, Ville,Age
 FROM etudiant
 	INNER JOIN adresse ON etudiant.Id = adresse.IdEtudiant
-	WHERE Province = "QC" AND Age >= 30 AND Statut = "Partiel";
+	WHERE Ville = "Québec" AND Age >= 30 AND Statut = "Partiel";
 
 /*Obtenir la liste qui sont principals et qui ont un numéros débutant par ‘819’*/
 SELECT * FROM telephone
