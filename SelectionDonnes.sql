@@ -25,10 +25,9 @@ SELECT * FROM telephone
 WHERE Principal = "O" AND Indicatif = '819';
 
 /*Obtenir les noms, prénom et numéro de cellulaire des étudiants qui ont réussis plus de 12 crédits*/
-SELECT Nom, Prenom, Numero
-	FROM etudiant INNER JOIN telephone
-		ON etudiant.Id =  telephone.IdEtudiant
-			WHERE Credits > 12 ;
+SELECT Nom, Prenom,CodePermanent ,Credits
+		FROM etudiant
+			WHERE Id IN (SELECT IdEtudiant FROM telephone WHERE  Credits > 12 );
        
 /*Obtenir les nom, prénom et code permanent des étudiants qui habite la ville de ‘québec’ ou la ville de montréal */
 SELECT Nom, Prenom, CodePermanent
