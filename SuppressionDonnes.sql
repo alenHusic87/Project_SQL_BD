@@ -6,7 +6,7 @@ WHERE Id = 1;
 /*Suppression physique de la table Téléphone*/
 DROP TABLE telephone;
 /*Suppression logique d’élément de la table Adresse*/
-UPDATE telephone
+UPDATE adresse
 set Supprime =1
 WHERE Id = 1;
 
